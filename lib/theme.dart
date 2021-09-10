@@ -10,11 +10,15 @@ Color kBgColor2 = Color(0xff2B2937);
 Color kBgColor3 = Color(0xff242231);
 Color kPrimaryTextColor = Color(0xffF1F0F2);
 Color kSecondaryTextColor = Color(0xff999999);
+Color kSubtitleTextColor = Color(0xff504F5E);
 
 TextStyle primaryTextStyle = GoogleFonts.poppins(color: kPrimaryTextColor);
 TextStyle secondaryTextStyle = GoogleFonts.poppins(color: kSecondaryTextColor);
+TextStyle subtitleTextStyle = GoogleFonts.poppins(color: kSubtitleTextColor);
 
 FontWeight light = FontWeight.w300;
 FontWeight reguler = FontWeight.w400;
 FontWeight medium = FontWeight.w500;
 FontWeight semibold = FontWeight.w600;
+
+double defaultmargin = 30.0;
