@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shamo_ecommerce/theme.dart';
+import 'package:flutter_shamo_ecommerce/pages/signin_page.dart';
+import 'package:flutter_shamo_ecommerce/pages/splash_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,30 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          child: Text(
-            'FANI DWI CAHYO',
-            style:
-                secondaryTextStyle.copyWith(fontSize: 16, fontWeight: semibold),
-          ),
-        ),
-      ),
+      title: 'Shamo Ecommerce',
+      routes: {
+        '/': (context) => SplashPage(),
+        '/sign-in': (context) => SignInPage(),
+      },
     );
   }
 }
