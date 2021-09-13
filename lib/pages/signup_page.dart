@@ -1,31 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shamo_ecommerce/pages/signup_page.dart';
 import 'package:flutter_shamo_ecommerce/theme.dart';
 import 'package:flutter_shamo_ecommerce/widgets/custom_button.dart';
 import 'package:flutter_shamo_ecommerce/widgets/custom_textfield.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Widget header() {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Login',
-            style:
-                primaryTextStyle.copyWith(fontSize: 24, fontWeight: semibold),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          Text(
-            'Sign In to Countinue',
-            style: secondaryTextStyle,
-          ),
-        ],
+      return Container(
+        margin: EdgeInsets.only(bottom: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Sign Up',
+              style:
+                  primaryTextStyle.copyWith(fontSize: 24, fontWeight: semibold),
+            ),
+            SizedBox(
+              height: 2,
+            ),
+            Text(
+              'Register and Happy Shoping',
+              style: subtitleTextStyle,
+            )
+          ],
+        ),
+      );
+    }
+
+    Widget textFullName() {
+      return CustomTextField(
+        title: 'Full Name',
+        iconUrl: 'assets/icon_name.png',
+        hintText: 'Your Full Name',
+      );
+    }
+
+    Widget textUserName() {
+      return CustomTextField(
+        title: 'Username',
+        iconUrl: 'assets/icon_username.png',
+        hintText: 'Your Username',
       );
     }
 
@@ -46,21 +64,21 @@ class SignInPage extends StatelessWidget {
       );
     }
 
-    Widget buttonSigIn() {
+    Widget buttonSigUp() {
       return CustomButton(
-        title: 'Sign In',
+        title: 'Sign Up',
         onTap: () {
           //Navigator.pushNamed(context, '/sign-up');
         },
       );
     }
 
-    Widget buttonSignUp() {
+    Widget buttonSignIn() {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Don\'t have an account?',
+            'Already have an account?',
             style: subtitleTextStyle.copyWith(fontSize: 12),
           ),
           SizedBox(
@@ -68,10 +86,10 @@ class SignInPage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/sign-up');
+              Navigator.pop(context);
             },
             child: Text(
-              'Sign up',
+              'Sign In',
               style: secondaryTextStyle.copyWith(
                   fontSize: 12, color: kPrimaryColor),
             ),
@@ -88,17 +106,16 @@ class SignInPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             header(),
-            SizedBox(
-              height: 50,
-            ),
+            textFullName(),
+            textUserName(),
             textFieldEmail(),
             textFieldPassword(),
             SizedBox(
               height: 30,
             ),
-            buttonSigIn(),
+            buttonSigUp(),
             Spacer(),
-            buttonSignUp()
+            buttonSignIn()
           ],
         ),
       ),
